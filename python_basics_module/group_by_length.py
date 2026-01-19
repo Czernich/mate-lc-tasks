@@ -5,11 +5,14 @@ def group_by_length(words: list) -> dict:
     # Write your code here
     pass
 
+
 if __name__ == "__main__":
     def validate_response(result, expected_result):
-        # Sort lists in dict values for comparison
-        result_sorted = {k: sorted(v) for k, v in result.items()}
-        expected_sorted = {k: sorted(v) for k, v in expected_result.items()}
+        if result is None:
+            print("FAIL")
+            return
+        result_sorted = {k: sorted(v) for k, v in (result or {}).items()}
+        expected_sorted = {k: sorted(v) for k, v in (expected_result or {}).items()}
         print("OK" if result_sorted == expected_sorted else "FAIL")
     
     validate_response(
@@ -22,6 +25,7 @@ if __name__ == "__main__":
         result=group_by_length(["one", "two", "three", "four"]),
         expected_result={3: ["one", "two"], 4: ["four"], 5: ["three"]}
     )
+
 
 # Solution
 
