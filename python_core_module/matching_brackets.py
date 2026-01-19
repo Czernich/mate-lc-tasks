@@ -36,10 +36,9 @@ def matching_brackets(s: str) -> bool:
         if bracket in bracket_pairs:
             stack.append(bracket)
         else:
-            if bracket in bracket_pairs.values():
-                if bracket_pairs[stack[-1]] == bracket:
-                    stack.pop()
-                else:
-                    return False
+            if bracket_pairs[stack[-1]] == bracket:
+                stack.pop()
+            else:
+                return False
 
     return not stack
