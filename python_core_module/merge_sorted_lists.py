@@ -13,6 +13,7 @@ if __name__ == "__main__":
     validate_response(result=merge_sorted_lists([], [1, 2, 3]), expected_result=[1, 2, 3])
     validate_response(result=merge_sorted_lists([1, 2, 3], []), expected_result=[1, 2, 3])
     validate_response(result=merge_sorted_lists([1], [2]), expected_result=[1, 2])
+    validate_response(result=merge_sorted_lists([3], [1]), expected_result=[1, 3])
     validate_response(result=merge_sorted_lists([1, 5, 9], [2, 3, 7, 10]), expected_result=[1, 2, 3, 5, 7, 9, 10])
 
 # Solution
