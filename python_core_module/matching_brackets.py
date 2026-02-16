@@ -9,20 +9,21 @@ def matching_brackets(s: str) -> bool:
         
 
 if __name__ == "__main__":
-    def validate_response(result, expected_result):
-        print("OK" if result is expected_result else "FAIL")
+    def validate_response(case, result, expected_result):
+        result = "OK" if result is expected_result else "FAIL"
+        print(f"{case:>2}: {result:>4}")
     
-    validate_response(result=matching_brackets("[{()}]"), expected_result=True)
-    validate_response(result=matching_brackets("[{(]"), expected_result=False)
-    validate_response(result=matching_brackets("()"), expected_result=True)
-    validate_response(result=matching_brackets("["), expected_result=False)
-    validate_response(result=matching_brackets(""), expected_result=True)
-    validate_response(result=matching_brackets("({[]})"), expected_result=True)
-    validate_response(result=matching_brackets("({[})]"), expected_result=False)
-    validate_response(result=matching_brackets("()[]{}"), expected_result=True)
-    validate_response(result=matching_brackets("[{()()[]}]{}"), expected_result=True)
-    validate_response(result=matching_brackets("((((()))))"), expected_result=True)
-    validate_response(result=matching_brackets("(((()))"), expected_result=False)
+    validate_response(case=1,result=matching_brackets("[{()}]"), expected_result=True)
+    validate_response(case=2,result=matching_brackets("[{(]"), expected_result=False)
+    validate_response(case=3,result=matching_brackets("()"), expected_result=True)
+    validate_response(case=4,result=matching_brackets("["), expected_result=False)
+    validate_response(case=5,result=matching_brackets(""), expected_result=True)
+    validate_response(case=6,result=matching_brackets("({[]})"), expected_result=True)
+    validate_response(case=7,result=matching_brackets("({[})]"), expected_result=False)
+    validate_response(case=8,result=matching_brackets("()[]{}"), expected_result=True)
+    validate_response(case=9,result=matching_brackets("[{()()[]}]{}"), expected_result=True)
+    validate_response(case=10,result=matching_brackets("((((()))))"), expected_result=True)
+    validate_response(case=11,result=matching_brackets("(((()))"), expected_result=False)
 
 
 

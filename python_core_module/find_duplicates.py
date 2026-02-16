@@ -6,15 +6,20 @@ def find_duplicates(lst: list) -> list:
     pass
 
 if __name__ == "__main__":
-    def validate_response(result, expected_result):
-        print("OK" if sorted(result) == sorted(expected_result) else "FAIL")
+    def validate_response(case, result, expected_result):
+        if result is not None:
+            result_txt = "OK" if sorted(result) == sorted(expected_result) else "FAIL"
+        else:
+            result_txt = "FAIL"
+        print(f"{case:>2}: {result_txt:>4}")
     
-    validate_response(result=find_duplicates([1, 2, 3, 2, 4, 5, 1]), expected_result=[1, 2])
-    validate_response(result=find_duplicates([1, 2, 3, 4, 5]), expected_result=[])
-    validate_response(result=find_duplicates([]), expected_result=[])
-    validate_response(result=find_duplicates([1, 1, 1, 1]), expected_result=[1])
-    validate_response(result=find_duplicates([5, 5, 3, 3, 1, 1]), expected_result=[1, 3, 5])
-    validate_response(result=find_duplicates(["a", "b", "a", "c", "b"]), expected_result=["a", "b"])
+    validate_response(case=1,result=find_duplicates([1, 2, 3, 2, 4, 5, 1]), expected_result=[1, 2])
+    validate_response(case=2,result=find_duplicates([1, 2, 3, 4, 5]), expected_result=[])
+    validate_response(case=3,result=find_duplicates([]), expected_result=[])
+    validate_response(case=4,result=find_duplicates([1, 1, 1, 1]), expected_result=[1])
+    validate_response(case=5,result=find_duplicates([5, 5, 3, 3, 1, 1]), expected_result=[1, 3, 5])
+    validate_response(case=6,result=find_duplicates([5, 5, 5, 3, 3, 1, 1]), expected_result=[1, 3, 5])
+    validate_response(case=7,result=find_duplicates(["a", "b", "a", "c", "b"]), expected_result=["a", "b"])
 
 # Solution
 
